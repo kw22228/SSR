@@ -7,7 +7,7 @@ const createStyledComponentsTransformer = require('typescript-plugin-styled-comp
 
 const devMode = process.env.NODE_ENV !== 'production';
 const styledComponentsTransformer = createStyledComponentsTransformer();
-const hotMiddlewareScript = `webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true`;
+const hotMiddlewareScript = `webpack-hot-middleware/client?name=web&path=/__webpack_hmr&timeout=20000&reload=true`;
 
 const getEntryPoint = (target) => {
     if (target === 'node') return ['./src/App.tsx'];
