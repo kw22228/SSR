@@ -13,7 +13,7 @@ const app = express();
 if (process.env.NODE_ENV !== 'production') {
     const webpack = require('webpack');
     const webpackConfig = require('../webpack.client.js').map((config: any) => {
-        config.output.path = config.output.replace('dist/dist/', 'dist/');
+        config.output.path = config.output.path.replace('dist/dist/', 'dist/');
         return config;
     });
 
