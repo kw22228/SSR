@@ -37,9 +37,10 @@ app.use(express.static(path.resolve(__dirname)));
 
 app.get('*', (req, res) => {
     const nodeStats = path.resolve(__dirname, './node/loadable-stats.json');
-    const webStats = path.resolve(__dirname, './web/loadable-stats.json');
     const nodeExtractor = new ChunkExtractor({ statsFile: nodeStats });
     const { default: App } = nodeExtractor.requireEntrypoint();
+
+    const webStats = path.resolve(__dirname, './web/loadable-stats.json');
     const webExtractor = new ChunkExtractor({ statsFile: webStats });
 
     // const store = createStore(reducers);

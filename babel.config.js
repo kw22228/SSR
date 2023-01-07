@@ -3,7 +3,7 @@ const isWebpack = (caller) => Boolean(caller && caller.name === 'babel-loader');
 
 module.exports = (api) => {
     const web = api.caller(isWebTarget);
-    const webpack = api.caller(isWebTarget);
+    const webpack = api.caller(isWebpack);
 
     return {
         presets: [

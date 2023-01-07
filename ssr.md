@@ -46,4 +46,18 @@
 
     -   output: SSR과 CSR에 필요한 파일을 나누기위해 target이름에 따라 폴더를 나눠줌.
 
-    -   SSR은 노드환경에서 실행되므로 webpack-node-externals를 추가해주되, 코드 스플리팅된 파일은 읽어야되므로 @loadable/component는 추가 시켜준다.
+    -   externals: SSR은 노드환경에서 실행되므로 webpack-node-externals를 추가해주되, 코드 스플리팅된 파일은 읽어야되므로 @loadable/component는 추가 시켜준다.
+
+-   babel.config.js
+
+    -   useBuiltIns: babel follyfill 설정이다. 'entry'를 해줄경우 @corejs모듈로 import함.
+
+    -   target: {node: 'current'}설정은 현재 node버전에 맞게 최적화 해줌.
+
+    -   plugins: 코드 스플리팅을 인식하기 위해 @loadable/babel-plugin을 사용(트랜스파일링을 tsc로 하게되면 plugin이 적상작동하지 않는다.)
+
+-   server.tsx
+
+    -   webpackDevMiddleware: webpack에서 멀티 컴파일을 해주기때문에 배열로 되어있는 config의 'web'(0번째) 부분을 넣어준다.
+
+    -   webExtractor: @loadable-component가 제공하는 서버사이드 렌더링 api이다. splitting된 정보를 취합하고, 각 메소드(getLinkTag, getStyleTag, getScriptTag)로 파일정보 전달한다.
