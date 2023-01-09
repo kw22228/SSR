@@ -50,11 +50,11 @@ const getConfig = (target) => {
         resolve: {
             extensions: ['.js', 'jsx', '.ts', '.tsx'],
             alias: {
-                pages: path.resolve('src/pages/'),
-                components: path.resolve('src/components'),
-                actions: path.resolve('src/store/actions'),
-                reducers: path.resolve('src/store/reducers'),
-                util: path.resolve('src/util/'),
+                '@pages': path.resolve('src/pages/'),
+                '@components': path.resolve('src/components'),
+                '@actions': path.resolve('src/store/actions'),
+                '@reducers': path.resolve('src/store/reducers'),
+                '@util': path.resolve('src/util/'),
             },
         },
         plugins:

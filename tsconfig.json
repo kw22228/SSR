@@ -32,7 +32,7 @@
         "paths": {
             "@src/*": ["src/*"],
             "@components/*": ["src/components/*"],
-            "@pages/*": ["src/components/pages/*"],
+            "@pages/*": ["src/pages/*"],
             "@store": ["src/store/index"],
             "@actions/*": ["src/store/actions/*"],
             "@reducers/*": ["src/store/reducers/*"],

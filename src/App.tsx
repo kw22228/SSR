@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Routes, Route } from 'react-router';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from '@components/Header';
+import Footer from '@components/Footer';
 
-const Home = loadable(() => import(/* webpackChunkName: "Home" */ './pages/Home'));
-const News = loadable(() => import(/* webpackChunkName: "News" */ './pages/News'));
+const Home = loadable(() => import(/* webpackChunkName: "Home" */ '@pages/Home'));
+const News = loadable(() => import(/* webpackChunkName: "News" */ '@pages/News'));
 
 class App extends Component {
     render() {

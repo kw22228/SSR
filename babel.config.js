@@ -28,7 +28,7 @@ module.exports = (api) => {
                     alias: {
                         '@src': './src',
                         '@components': './src/components',
-                        '@pages': './src/components/pages',
+                        '@pages': './src/pages',
                         '@store': './src/store',
                         '@reducers': './src/store/reducers',
                         '@actions': './src/store/actions',
