@@ -13,7 +13,8 @@ const app = express();
 if (process.env.NODE_ENV !== 'production') {
     const webpack = require('webpack');
     const webpackConfig = require('../webpack.client.js').map((config: any) => {
-        config.output.path = config.output.path.replace('dist/dist/', 'dist/');
+        config.output.path = config.output.path.replace('dist\\dist\\', 'dist\\'); // window에서는 path가 /가 아니라 \임.
+
         return config;
     });
 
@@ -24,7 +25,7 @@ if (process.env.NODE_ENV !== 'production') {
 
     app.use(
         webpackDevMiddleware(compiler, {
-            logLevel: 'silent',
+            // logLevel: 'silent',
             publicPath: webpackConfig[0].output.publicPath,
             writeToDisk: true,
         }),
